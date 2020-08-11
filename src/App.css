@@ -24,6 +24,99 @@
   color: white;
 }
 
+.searchWrapper {
+  padding: 30px 0px;
+  background: #def3f3;
+}
+
+#searchInput {
+  margin-top: 5px;
+}
+
+.headerText {
+  margin-bottom: 10px;
+}
+
+#displayWrapper {
+  margin: auto;
+  max-width: 90%;
+}
+
+#displayBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+#bigPicContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.25s;
+}
+
+.hideBigPic {
+  background: #00000000;
+  visibility: hidden;
+}
+
+.showBigPic {
+  background: #0000008a;
+  visibility: visible;
+}
+
+.bigDogPic {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.dogPicFrame {
+  flex-basis: 30%;
+  margin: 5px 0px;
+}
+
+.dogPic {
+  max-width: 300px;
+  height: 300px;
+  transition: box-shadow 0.25s;
+}
+
+.dogPic:hover {
+  box-shadow: 0px 0px 13px #4a4a4a;
+}
+
+.ResultPageExplorerContainer {
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pageNumWrapper {
+  margin: 0px 8px;
+}
+
+.pageExplorerNumsActive {
+  margin: 0px 5px;
+  font-weight: bold;
+}
+
+.pageExplorerNumsDefault {
+  margin: 0px 3px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+.pageExplorerNumsDefault:hover {
+  text-decoration: none;
+}
+
 .App-link {
   color: #61dafb;
 }
