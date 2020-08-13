@@ -9,8 +9,6 @@ const ResultPageExplorer = ({ changePageHandler, page, dogData }) => {
     return allPages.slice(start, end);
   })();
 
-  console.log(pages);
-
   return (
     <div className="ResultPageExplorerContainer">
       <button

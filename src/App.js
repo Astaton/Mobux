@@ -21,17 +21,14 @@ class App extends Component {
     this.changePageHandler = this.changePageHandler.bind(this);
   }
 
-  componentDidMount() {}
-
   searchForBreed(breed) {
     const request = new XMLHttpRequest();
-    const componentThis = this;
+    const thisComponent = this;
 
     request.open("get", `https://dog.ceo/api/breed/${breed}/images`);
     request.onload = function () {
       const response = JSON.parse(request.responseText);
-      console.log(response);
-      componentThis.setState(
+      thisComponent.setState(
         {
           dogData: response.message,
           status: response.status,
@@ -39,9 +36,8 @@ class App extends Component {
           page: 1,
         },
         () => {
-          console.log(componentThis.state.status);
-          if (componentThis.state.status === "success") {
-            componentThis.updatePicsOnPage();
+          if (thisComponent.state.status === "success") {
+            thisComponent.updatePicsOnPage();
           }
         }
       );
@@ -64,13 +60,13 @@ class App extends Component {
   }
 
   picClickHandler(imgUrl) {
-    const bigPicElem = document.getElementById("bigPicContainer");
-    bigPicElem.classList.add("showBigPic");
-    this.setState({ selectedDogImgUrl: imgUrl });
+    this.setState({ selectedDogImgUrl: imgUrl }, () => {
+      const bigPicElem = document.getElementById("bigPicContainer");
+      bigPicElem.classList.add("showBigPic");
+    });
   }
 
   hideBigPic() {
-    console.log("runnning hideBigPic");
     const bigPicElem = document.getElementById("bigPicContainer");
     bigPicElem.classList.remove("showBigPic");
   }

@@ -21,7 +21,7 @@ class SearchBar extends Component {
 
   clickHandler() {
     const searchInputElem = document.getElementById("searchInput");
-    const breed = searchInputElem.value;
+    const breed = searchInputElem.value.toLowerCase();
     if (breed) {
       searchInputElem.value = "";
       this.props.searchForBreed(breed);
